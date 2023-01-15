@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { CustomInput } from "./components/customInput/CustomInput";
-import TextStyleDropDown from "./components/textStyleDropDown.tsx/TextStyleDropDown";
 import useCycle from "./hooks/useCycle";
 import "./App.css";
+import CommandsDropDown from "./components/commandsDropDown/CommandsDropDown";
+import { dropDownArr, dropDownMap, dropDownClassMap } from "./data";
 
 function App() {
   const [input, setInput] = useState("");
@@ -11,6 +12,7 @@ function App() {
     up: handlePressUp,
     down: handlePressDown,
   } = useCycle(dropDownArr);
+
   const [inputType, setInputType] = useState("default");
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -74,7 +76,7 @@ function App() {
         }}
       />
       {commandsDropDownOn && (
-        <TextStyleDropDown
+        <CommandsDropDown
           handleInputType={handleInputType}
           inputType={inputType}
         />
@@ -84,44 +86,3 @@ function App() {
 }
 
 export default App;
-
-export const dropDownMap = {
-  H1: "Heading 1",
-  H2: "Heading 2",
-  Italic: "Text Italic",
-  Text: "Regular Text",
-};
-
-export const dropDownClassMap = {
-  H1: "heading1",
-  H2: "heading2",
-  Italic: "text_Italic",
-  Text: "regular_Text",
-};
-
-export type dropDownDataType = typeof dropDownData[0];
-
-export const dropDownData = [
-  {
-    label: "H1",
-    heading: "Heading 1",
-    description: "Big Section Heading",
-  },
-  {
-    label: "H2",
-    heading: "Heading 2",
-    description: "Medium Section Heading",
-  },
-  {
-    label: "Italic",
-    heading: "Text Italic",
-    description: "Italic text",
-  },
-  {
-    label: "Text",
-    heading: "Regular Text",
-    description: "Regular text for paragraph",
-  },
-];
-
-export const dropDownArr = dropDownData.map((el) => el.label);

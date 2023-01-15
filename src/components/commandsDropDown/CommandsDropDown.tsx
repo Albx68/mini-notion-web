@@ -1,7 +1,7 @@
-import { dropDownData, dropDownDataType } from "../../App";
-import "./textStyleDD.css";
+import { dropDownData, dropDownDataType } from "../../data";
+import "./commandsDropDown.css";
 
-const TextStyleDropDown: React.FC<{
+const CommandsDropDown: React.FC<{
   handleInputType: (label: string) => void;
   inputType: string;
 }> = ({ handleInputType, inputType }) => {
@@ -26,4 +26,4 @@ const TextStyleDropDown: React.FC<{
   );
 };
 
-export default TextStyleDropDown;
+export default CommandsDropDown;
