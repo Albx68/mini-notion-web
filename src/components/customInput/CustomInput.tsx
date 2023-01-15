@@ -1,4 +1,4 @@
-import { ChangeEvent, MutableRefObject, RefObject } from "react";
+import { ChangeEvent, KeyboardEvent, RefObject } from "react";
 import "./customInputstyles.css";
 
 type inputProps = {
@@ -8,6 +8,7 @@ type inputProps = {
   value: string;
   handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
   refValue: RefObject<HTMLInputElement>;
+  onKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export const CustomInput: React.FC<inputProps> = ({
@@ -17,6 +18,7 @@ export const CustomInput: React.FC<inputProps> = ({
   value,
   handleInputChange,
   refValue,
+  onKeyDown,
 }) => {
   return (
     <input
@@ -27,6 +29,7 @@ export const CustomInput: React.FC<inputProps> = ({
       value={value}
       onChange={handleInputChange}
       ref={refValue}
+      onKeyDown={onKeyDown}
     ></input>
   );
 };

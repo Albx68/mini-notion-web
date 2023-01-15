@@ -1,16 +1,17 @@
 import "./textStyleDD.css";
-import { dropDownData } from "../../App";
+import { dropDownData, dropDownDataType } from "../../App";
 
 const TextStyleDropDown: React.FC<{
   handleInputType: (label: string) => void;
-}> = ({ handleInputType }) => {
+  inputType: string;
+}> = ({ handleInputType, inputType }) => {
   return (
     <ul className="dropdown">
-      {dropDownData.map(({ label, heading, description }: dropDownData) => {
+      {dropDownData.map(({ label, heading, description }: dropDownDataType) => {
         return (
           <li
             key={label}
-            className="option"
+            className={`option ${inputType === label ? "active" : null}`}
             onClick={() => handleInputType(label)}
           >
             <div className="option_label_box">{label}</div>
