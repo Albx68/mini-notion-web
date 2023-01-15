@@ -1,0 +1,36 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(214, 214, 214);
+}
+.option {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.2rem;
+  text-align: start;
+  background: white;
+  border: none;
+  border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.option_label_box {
+  background-color: hsla(0, 0%, 95%, 0.644);
+  border: 1px solid #d6d6d6;
+  padding: 1rem;
+  text-align: center;
+  width: 10%;
+  border-radius: 5px;
+}
+.option_text_heading {
+  font-size: 1rem;
+}
+.option_text_para {
+  font-size: 0.5rem;
+  color: gray;
+}
