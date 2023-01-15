@@ -1,5 +1,5 @@
-import "./textStyleDD.css";
 import { dropDownData, dropDownDataType } from "../../App";
+import "./textStyleDD.css";
 
 const TextStyleDropDown: React.FC<{
   handleInputType: (label: string) => void;

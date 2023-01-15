@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const useCycle = (arr: string[]) => {
   const [cycle, setCycle] = useState(arr[0]);
-  const [i, setI] = useState(0);
+  const [i, setI] = useState(-1);
   const length = arr.length;
 
   const up = () => {

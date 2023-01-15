@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import "./App.css";
 import { CustomInput } from "./components/customInput/CustomInput";
 import TextStyleDropDown from "./components/textStyleDropDown.tsx/TextStyleDropDown";
 import useCycle from "./hooks/useCycle";
+import "./App.css";
 
 function App() {
   const [input, setInput] = useState("");
