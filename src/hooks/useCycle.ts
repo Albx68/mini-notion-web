@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
 
+interface IuseCycle {
+  cycle:string;
+  up:()=>void;
+  down:()=>void;
+}
+
 const useCycle = (arr: string[]) => {
   const [cycle, setCycle] = useState(arr[0]);
   const [i, setI] = useState(-1);
@@ -21,7 +27,7 @@ const useCycle = (arr: string[]) => {
     setCycle(() => arr[i]);
   }, [i]);
 
-  return { cycle, up, down };
+  return { cycle, up, down } as IuseCycle;
 };
 
 export default useCycle;
